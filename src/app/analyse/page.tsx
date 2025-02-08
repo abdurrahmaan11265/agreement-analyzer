@@ -1,21 +1,13 @@
 "use client";
 import { useState, useCallback } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
+import { TextItem, TextMarkedContent } from 'pdfjs-dist/types/src/display/api';
 import { IoCloudUploadOutline } from "react-icons/io5";
 import Button1 from '../../components/Button1';
 import AnalysisResults from '../../components/AnalysisResults';
-import type { AnalysisData } from '../../components/AnalysisResults';
+import type { AnalysisData } from '../../types/analysis';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.js`;
-
-interface PDFTextItem {
-    str: string;
-    dir: string;
-    width: number;
-    height: number;
-    transform: number[];
-    fontName: string;
-}
 
 export default function Analyse() {
     const [error, setError] = useState<string>('');
@@ -40,7 +32,7 @@ export default function Analyse() {
                 const page = await pdf.getPage(i);
                 const textContent = await page.getTextContent();
                 const pageText = textContent.items
-                    .map((item: PDFTextItem) => item.str)
+                    .map((item: TextItem | TextMarkedContent) => 'str' in item ? item.str : '')
                     .join(' ');
                 fullText += pageText + '\n';
             }

@@ -1,26 +1,12 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { AnalysisData } from '../types/analysis';
 
-interface FinancialImpact {
-    positive: number;
-    negative: number;
-}
-
-interface AnalysisData {
-    readabilityScore: number;
-    sentimentAnalysis: string;
-    financialImpact: FinancialImpact;
-    riskAnalysis: string[];
-    legalComplianceCheck: string[];
-    obligationSummary: string[];
-    alternativeSuggestions: string[];
-}
-
-interface AnalysisResultsProps {
+interface Props {
     data: AnalysisData;
 }
 
-const AnalysisResults: React.FC<AnalysisResultsProps> = ({ data }) => {
+const AnalysisResults = ({ data }: Props) => {
     const financialData = [
         { name: 'Positive', value: data.financialImpact.positive },
         { name: 'Negative', value: data.financialImpact.negative },
