@@ -3,56 +3,63 @@ import React, { JSX } from 'react';
 import styled from 'styled-components';
 
 interface Card1Props {
-    icon: JSX.Element;
-    frontText?: string;
-    descriptionTitle?: string;
-    descriptionPara?: string;
+  icon: JSX.Element;
+  frontText?: string;
+  descriptionTitle?: string;
+  descriptionPara?: string;
 }
 
 const Card1: React.FC<Card1Props> = ({ icon, frontText = "Default Text", descriptionPara = "Default Text", descriptionTitle = "Default Text" }) => {
-    return (
-        <StyledWrapper>
-            <div className="card">
-                <div className="content">
-                    <div className="back">
-                        <div className="back-content">
-                            {icon}
-                            <strong>{frontText}</strong>
-                        </div>
-                    </div>
-                    <div className="front">
-                        <div className="img">
-                            <div className="circle">
-                            </div>
-                            <div className="circle" id="right">
-                            </div>
-                            <div className="circle" id="bottom">
-                            </div>
-                        </div>
-                        <div className="front-content">
-                            <div className="description flex flex-col justify-between">
-                                <div className="title">
-                                    <p className="title">
-                                        <strong>{descriptionTitle}</strong>
-                                    </p>
-                                    <svg fillRule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style={{ mixBlendMode: 'normal' }} textAnchor="none" fontSize="none" fontWeight="none" fontFamily="none" strokeDashoffset={0} strokeMiterlimit={10} strokeLinejoin="miter" strokeLinecap="butt" strokeWidth={1} stroke="none" fillRule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z" /></g></g></svg>
-                                </div>
-                                <p>{descriptionPara}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <StyledWrapper>
+      <div className="card">
+        <div className="content">
+          <div className="back">
+            <div className="back-content">
+              {icon}
+              <strong>{frontText}</strong>
             </div>
-        </StyledWrapper>
-    );
+          </div>
+          <div className="front">
+            <div className="img">
+              <div className="circle">
+              </div>
+              <div className="circle" id="right">
+              </div>
+              <div className="circle" id="bottom">
+              </div>
+            </div>
+            <div className="front-content">
+              <div className="description flex flex-col justify-between">
+                <div className="title">
+                  <p className="title">
+                    <strong>{descriptionTitle}</strong>
+                  </p>
+                  <svg fillRule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style={{ mixBlendMode: 'normal' }} textAnchor="none" fontSize="none" fontWeight="none" fontFamily="none" strokeDashoffset={0} strokeMiterlimit={10} strokeLinejoin="miter" strokeLinecap="butt" strokeWidth={1} stroke="none" fillRule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z" /></g></g></svg>
+                </div>
+                <p>{descriptionPara}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </StyledWrapper>
+  );
 }
 
 const StyledWrapper = styled.div`
   .card {
-  overflow: visible;
-  width: 17vw;
-  height: 50vh;
-}
+    overflow: visible;
+    width: 90vw;
+    height: 45vh;
+    margin: 1rem auto;
+
+    @media (min-width: 768px) {
+      width: 17vw;
+      height: 50vh;
+      margin: 0;
+    }
+  }
 
 .content {
   width: 100%;
@@ -148,14 +155,20 @@ const StyledWrapper = styled.div`
   box-shadow: 0px 0px 10px 5px #00000088;
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: 15px;
+  @media (min-width: 768px) {
+    padding: 30px;
+  }
   background-color: #00000099;
   backdrop-filter: blur(5px);
   border-radius: 5px;
 }
 
 .title {
-  font-size: 20px;
+  font-size: 16px;
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
   max-width: 100%;
   display: flex;
   justify-content: space-between;

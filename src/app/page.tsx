@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Section1 />
-      <section className="p-10 flex justify-around align-middle min-h-[50vh]">
+      <section className="p-4 md:p-10 flex flex-col md:flex-row justify-around align-middle min-h-[50vh] gap-8 md:gap-4">
         <Card1
           icon={<AiFillDropboxCircle size={50} />}
           frontText="1. Upload Document"

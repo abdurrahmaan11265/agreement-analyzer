@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 const Section1 = () => {
     return (
-        <div className='flex justify-center items-center'>
-            <div className="relative h-[18em] w-[80vw] border-2 border-[rgba(50,0,100,0.5)] rounded-[1.5em] bg-gradient-to-br from-[rgba(50,0,100,1)] via-purple-700/80 to-[rgba(50,0,100,0.2)] text-white font-nunito p-[1.5em] flex justify-center items-left flex-col gap-[1em] backdrop-blur-[12px]  transition-all duration-500 group/card ">
+        <div className='flex justify-center items-center p-4'>
+            <div className="relative h-auto min-h-[18em] w-[95vw] md:w-[80vw] border-2 border-[rgba(50,0,100,0.5)] rounded-[1.5em] bg-gradient-to-br from-[rgba(50,0,100,1)] via-purple-700/80 to-[rgba(50,0,100,0.2)] text-white font-nunito p-[1em] md:p-[1.5em] flex justify-center items-left flex-col gap-[1em] backdrop-blur-[12px] transition-all duration-500 group/card">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#320064]/30 via-fuchsia-500/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 rounded-[1.5em]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(50,0,100,0.1),transparent_60%)] group-hover/card:animate-pulse" />
                 <div className="absolute top-4 right-4 flex gap-2">
@@ -13,10 +13,10 @@ const Section1 = () => {
                     <div className="w-2 h-2 rounded-full bg-[#320064]/10" />
                 </div>
                 <div className="relative z-10 transition-transform duration-300 group-hover/card:translate-y-[-2px] space-y-3">
-                    <h1 className="text-[2.2em] font-bold bg-gradient-to-r from-white via-purple-100 to-purple-200 bg-clip-text text-transparent">
+                    <h1 className="text-[1.5em] md:text-[2.2em] font-bold bg-gradient-to-r from-white via-purple-100 to-purple-200 bg-clip-text text-transparent">
                         Agreement Analyzer AI-Powered Contract Review
                     </h1>
-                    <p className="text-[0.9em] text-purple-100/90 leading-relaxed font-light">
+                    <p className="text-[0.8em] md:text-[0.9em] text-purple-100/90 leading-relaxed font-light">
                         Simplify Your Agreements, Maximize Your Advantage
                         Upload your agreement PDFs and let our AI-powered analyzer break them down for you. Get clear insights, suggested additions, and an unbiased evaluation of the most advantageous party.
                     </p>
