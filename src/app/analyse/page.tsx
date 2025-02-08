@@ -4,16 +4,16 @@ import * as pdfjsLib from 'pdfjs-dist';
 import { IoCloudUploadOutline } from "react-icons/io5";
 import Button1 from '../../components/Button1';
 import AnalysisResults from '../../components/AnalysisResults';
+import type { AnalysisData } from '../../components/AnalysisResults';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.js`;
 
 export default function Analyse() {
-    const [pdfText, setPdfText] = useState<string>('');
     const [error, setError] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [isDragging, setIsDragging] = useState<boolean>(false);
-    const [analysisResult, setAnalysisResult] = useState<any>(null);
+    const [analysisResult, setAnalysisResult] = useState<AnalysisData | null>(null);
 
     const extractText = async (file: File): Promise<string> => {
         try {
@@ -86,7 +86,6 @@ export default function Analyse() {
             setIsLoading(true);
             const extractedText = await extractText(selectedFile);
 
-            // Ensure pdfText is set before making the API call
             if (!extractedText) {
                 setError('Failed to extract text from the PDF');
                 setIsLoading(false);
@@ -102,7 +101,6 @@ export default function Analyse() {
             });
 
             const result = await response.json();
-            // console.log(result)
             if (response.ok) {
                 setAnalysisResult(result);
                 setError('');

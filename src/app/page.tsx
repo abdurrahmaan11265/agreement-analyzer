@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Section1 from "@/components/Section1";
 import Card1 from "@/components/Card1";
 import { AiFillDropboxCircle } from "react-icons/ai";
@@ -15,13 +14,13 @@ export default function Home() {
           frontText="1. Upload Document"
           descriptionTitle="Upload your document"
           descriptionPara="Upload your document by dragging and dropping it in the box or by clicking the box to select the Pdf file."
-          />
+        />
         <Card1
           icon={<PiCursorClickFill size={50} />}
           frontText="2. Click Analyse"
           descriptionTitle="Click the button"
           descriptionPara="Click the button to analyse the document and get the results. Our system scans the document, extracting key clauses and highlighting critical points."
-          />
+        />
         <Card1
           icon={<IoAnalytics size={50} />}
           frontText="3. Get Results"

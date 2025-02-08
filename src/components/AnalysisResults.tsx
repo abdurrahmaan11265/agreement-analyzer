@@ -1,8 +1,23 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
+interface FinancialImpact {
+    positive: number;
+    negative: number;
+}
+
+interface AnalysisData {
+    readabilityScore: number;
+    sentimentAnalysis: string;
+    financialImpact: FinancialImpact;
+    riskAnalysis: string[];
+    legalComplianceCheck: string[];
+    obligationSummary: string[];
+    alternativeSuggestions: string[];
+}
+
 interface AnalysisResultsProps {
-    data: any;
+    data: AnalysisData;
 }
 
 const AnalysisResults: React.FC<AnalysisResultsProps> = ({ data }) => {
