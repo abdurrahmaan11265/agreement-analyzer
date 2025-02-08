@@ -18,7 +18,13 @@ export default function Analyse() {
     const extractText = async (file: File): Promise<string> => {
         try {
             const arrayBuffer = await file.arrayBuffer();
-            const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+            const pdf = await pdfjsLib.getDocument({
+                data: arrayBuffer,
+                useWorkerFetch: false,
+                isEvalSupported: false,
+                disableFontFace: true,
+            }).promise;
+
             let fullText = '';
 
             for (let i = 1; i <= pdf.numPages; i++) {
