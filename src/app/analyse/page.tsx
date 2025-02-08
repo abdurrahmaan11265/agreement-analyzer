@@ -10,7 +10,11 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.j
 
 interface PDFTextItem {
     str: string;
-    // Add other properties if needed
+    dir: string;
+    width: number;
+    height: number;
+    transform: number[];
+    fontName: string;
 }
 
 export default function Analyse() {
