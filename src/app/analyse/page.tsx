@@ -8,6 +8,11 @@ import type { AnalysisData } from '../../components/AnalysisResults';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.js`;
 
+interface PDFTextItem {
+    str: string;
+    // Add other properties if needed
+}
+
 export default function Analyse() {
     const [error, setError] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -31,7 +36,7 @@ export default function Analyse() {
                 const page = await pdf.getPage(i);
                 const textContent = await page.getTextContent();
                 const pageText = textContent.items
-                    .map((item: any) => item.str)
+                    .map((item: PDFTextItem) => item.str)
                     .join(' ');
                 fullText += pageText + '\n';
             }
