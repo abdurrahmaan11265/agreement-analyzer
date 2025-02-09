@@ -20,7 +20,7 @@ export async function POST(request: Request) {
             Obligation Summary - Summarize key obligations for each party.
             Financial Impact Analysis - Assess monetary advantages or disadvantages for each party. give positive and negative percentages.
             Alternative Suggestions - Suggest alternative phrasings or provisions to improve fairness.
-            Please provide the response in JSON format and give nothing else.
+            Please provide the response in JSON format and give nothing else. If the pdf data is not a valid agreement return that it is not a valid agreement for string fields and 0 for numeric fields in all the fields.
             The response should be in the following format:
             {
                 riskAnalysis: ["Risk 1", "Risk 2", "Risk 3"],
