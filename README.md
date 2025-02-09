@@ -1,6 +1,22 @@
 # Agreement Analyzer
 
-An AI-powered tool that analyzes legal agreements and contracts using Gemini API, providing detailed insights and analysis.
+## Overview
+Agreement Analyzer is a modern web application designed to simplify the process of reviewing legal documents and agreements. Using the power of Google's Gemini AI, it provides instant, comprehensive analysis of legal documents, helping users understand complex agreements without the immediate need for legal expertise.
+
+### What it does
+- Analyzes legal documents and agreements uploaded in PDF format
+- Provides risk assessment and legal compliance checks
+- Calculates readability scores and sentiment analysis
+- Identifies financial impacts and obligations
+- Suggests alternative phrasings for better clarity
+- Visualizes analysis results through interactive charts
+
+### Why use it?
+- **Save Time**: Automated analysis in seconds instead of hours of manual review
+- **Reduce Costs**: Minimize initial legal consultation needs
+- **Better Understanding**: Get clear insights about complex legal terms
+- **Risk Mitigation**: Identify potential issues before signing
+- **Improved Decision Making**: Understand the financial and legal implications
 
 ## Features
 
